@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timesheet-dep
+  namespace: chap4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timesheet
+  template:
+    metadata:
+      labels:
+        app: timesheet
+    spec:
+      containers:
+        - name: timesheet
+          image: arijta/timesheet:1.1
+          ports:
+            - containerPort: 8089
