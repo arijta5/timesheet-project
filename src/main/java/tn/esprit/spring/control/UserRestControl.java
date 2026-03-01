@@ -14,8 +14,11 @@ import tn.esprit.spring.services.IUserService;
 @RequestMapping("/user")
 public class UserRestControl {
 
-	@Autowired 
-	IUserService userService; 
+	private final IUserService userService;
+
+public UserRestControl(IUserService userService) {
+    this.userService = userService;
+} 
 
 	
 	// URL : http://localhost:????/????/????/retrieve-all-users
@@ -56,4 +59,5 @@ public class UserRestControl {
 	}
 	 
 } 
+
  
