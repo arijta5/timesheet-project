@@ -18,22 +18,17 @@ public class UserRestControl {
 
 public UserRestControl(IUserService userService) {
     this.userService = userService;
-} 
+}
 
-	
-	// URL : http://localhost:????/????/????/retrieve-all-users
 	@GetMapping("/retrieve-all-users")
 	public List<User> retrieveAllUsers() {
 		return userService.retrieveAllUsers();
-		//return list;
 	}
- 
-	// http://localhost:????/timesheet-devops/retrieve-user/{user-id}
+
 	@GetMapping("/retrieve-user/{user-id}")
 	public User retrieveUser(@PathVariable("user-id") String userId) {
 		return userService.retrieveUser(userId);
 	}
-	
 	 
 
 	// Ajouter User : http://localhost:????/timesheet-devops/add-user 
